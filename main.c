@@ -6,6 +6,11 @@
                     resultat += 1;  \
                 }
 
+#define TEST_STR(a, b) if(strcmp(a, b) != 0)    \
+                       {                        \
+                           resultat += 1;       \
+                       }
+
 bool palindrome(const char* const chaine)
 {
     size_t debut = 0;
@@ -25,6 +30,22 @@ bool palindrome(const char* const chaine)
     }
     
     return true;
+}
+
+char* inverse(char* chaine)
+{
+    size_t const longueur = strlen(chaine);
+    size_t const mi_longueur = longueur / 2;
+
+    // On échange la première lettre avec la dernière, puis la deuxième avec 
+    // l'avant-dernière et ainsi de suite jusqu'au milieu de la chaine.
+    for(size_t i = 0; i != mi_longueur; ++i)
+    {
+        chaine[i] = chaine[longueur - i];
+        chaine[longueur - i] = chaine[i];
+    }
+
+    return chaine;
 }
 
 int main()
@@ -47,8 +68,25 @@ int main()
     TEST(!palindrome(" a"));
     TEST(!palindrome("ab"));
     TEST(!palindrome("aab"));
+    TEST(!palindrome("aaba"));
 
 
+    // Tests de la fonction inverse
+    char test[10];
+    strcpy(test, "");
+    TEST_STR(inverse(test), "");
+    strcpy(test, "a");
+    TEST_STR(inverse(test), "a");
+    strcpy(test, "aa");
+    TEST_STR(inverse(test), "aa");
+    strcpy(test, "ab");
+    TEST_STR(inverse(test), "ba");
+    strcpy(test, "abc");
+    TEST_STR(inverse(test), "cba");
+    strcpy(test, "abcd");
+    TEST_STR(inverse(test), "dcba");
+    strcpy(test, "abcde");
+    TEST_STR(inverse(test), "edcba");
 
     return resultat;
 }
