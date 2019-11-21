@@ -6,6 +6,11 @@
                     resultat += 1;  \
                 }
 
+#define TEST_STR(a, b) if(strcmp(a, b) != 0)    \
+                       {                        \
+                           resultat += 1;       \
+                       }
+
 bool palindrome(const char* const chaine)
 {
     size_t debut = 0;
