@@ -32,6 +32,8 @@ bool palindrome(const char* const chaine)
     return true;
 }
 
+// Inverse une chaîne donnée.
+// Modifie la chaîne donnée et retourne un pointeur au début de cette chaîne.
 char* inverse(char* chaine)
 {
     size_t const longueur = strlen(chaine);
@@ -71,7 +73,7 @@ int main()
     TEST(!palindrome("aaba"));
 
 
-    // Tests de la fonction inverse
+    // Tests de la fonction inverse.
     char test[10];
     strcpy(test, "");
     TEST_STR(inverse(test), "");
