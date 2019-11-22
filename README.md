@@ -34,3 +34,26 @@ Modèle de départ pour exercices d'introduction à Visual Studio Code, au débo
         - Menu déroulant `DEBUG`: {`test (Linux)`, `test (MacOS)`}
     - Menu: `Debug` > `Start debugging`
 
+## Objectif
+
+Le programme contient quatre fonctions qui contiennent des erreurs.
+Ces fonctions sont testées par un macro qui compare le résultat reçu avec le résultat attendu.
+Si les résultats ne correspondent pas, un compteur de résultat final est incrementé de un.
+À la fin du programme, ce compteur final est retourné au system opérateur.
+L'objectif est de réparer toutes les fonctions et que le programme retourne zéro.
+Pour connaître le code retourné par un programme, utilisez `echo $?` à l'invite de commande.
+Dans l'example, le programme `a.out` a retourné la valeur `23`.
+Si toutes les fonctions sont correctement réparées, on verra `0`.
+```
+> ./a.out
+> echo $?
+23
+```
+
+Il vous est permis: 
+- De modifier les définitions des fonctions `palindrome`, `inverse`, `en_chaine` et `anagramme` à votre gré.
+
+Il ne vous est pas permis:
+- De modifier les déclarations des fonctions `palindrome`, `inverse`, `en_chaine` et `anagramme`. (Leurs types de retour et les types de leurs paramètres ne peuvent être modifiés.)
+- De modifier la définition de la fonction `main`.
+
