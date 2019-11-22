@@ -1,15 +1,9 @@
+#include <math.h>
+#include <limits.h>
 #include <stdbool.h>
+#include <stdint.h>
+#include <stdlib.h>
 #include <string.h>
-
-#define TEST(x) if(!x)              \
-                {                   \
-                    resultat += 1;  \
-                }
-
-#define TEST_STR(a, b) if(strcmp(a, b) != 0)    \
-                       {                        \
-                           resultat += 1;       \
-                       }
 
 bool palindrome(const char* const chaine)
 {
@@ -32,6 +26,8 @@ bool palindrome(const char* const chaine)
     return true;
 }
 
+// Inverse une chaîne donnée.
+// Modifie la chaîne donnée et retourne un pointeur au début de cette chaîne.
 char* inverse(char* chaine)
 {
     size_t const longueur = strlen(chaine);
@@ -48,11 +44,62 @@ char* inverse(char* chaine)
     return chaine;
 }
 
+// Converti un nombre de 32 bits de sa représentation numérique en sa représentation textuelle.
+// Si le nombre est négatif, la chaîne commence par le caractère '-'.
+// Il est attendu que la chaine est suffisament longue pour acceullir le résultat.
+// Retourne un pointeur au début de la chaîne donnée.
+char* en_chaine(int32_t const nombre, char* chaine)
+{
+    memset(chaine, '\0', (size_t)log10(INT32_MAX) + 2);
+
+    if(nombre < 0)
+    {
+        chaine[0] = '-';
+    }
+
+    // De combien de chiffres le nombre est-il composé ?
+    size_t n_chiffres;
+    if(nombre == 0)
+    {
+        n_chiffres = 1;
+    }
+    else if(nombre == INT32_MIN) // Cas spécial où abs(nombre) donnerais un mauvais résultat.
+    {
+        n_chiffres = log10(abs(nombre + 1)) + 1;
+    }
+    else
+    {
+        n_chiffres = log10(abs(nombre)) + 1;
+    }
+
+    for(size_t i = 0; i != n_chiffres; ++i)
+    {
+        // On isole chaque chiffre du nombre, partant du plus significatif.
+        int32_t const a = nombre / (int32_t)pow(10, n_chiffres - i);    // e.g. nombre = 1234, i = 1 => a = 12
+        int32_t const b = abs(a) % 10;                                  // e.g. a = 12 => b = 2
+
+        // Le chiffre trouvé est converti en son caractère équivalent.
+        chaine[i] = '0' + b;
+    }
+
+    return chaine;
+}
+
 int main()
 {
     // Tous les tests incrémenterons cette variable de 1.
     // Le but est de la garder à 0.
     int resultat = 0;
+
+#define TEST(x) if(!x)              \
+                {                   \
+                    resultat += 1;  \
+                }
+
+#define TEST_STR(a, b) if(strcmp(a, b) != 0)    \
+                       {                        \
+                           resultat += 1;       \
+                       }
 
     // Tests de la fonction palindrome.
     // Tests positifs.
@@ -71,7 +118,7 @@ int main()
     TEST(!palindrome("aaba"));
 
 
-    // Tests de la fonction inverse
+    // Tests de la fonction inverse.
     char test[10];
     strcpy(test, "");
     TEST_STR(inverse(test), "");
@@ -87,6 +134,18 @@ int main()
     TEST_STR(inverse(test), "dcba");
     strcpy(test, "abcde");
     TEST_STR(inverse(test), "edcba");
+
+
+    // Tests de la fonction en_chaine.
+    char chaine[(size_t)log10(INT32_MAX) + 2]; // Suffisament d'espace pour tous les chiffres, le signe de négation s'il y a lieu et le '\0' final.
+    TEST_STR(en_chaine(0, chaine), "0");
+    TEST_STR(en_chaine(1, chaine), "1");
+    TEST_STR(en_chaine(11, chaine), "11");
+    TEST_STR(en_chaine(1234, chaine), "1234");
+    TEST_STR(en_chaine(-1, chaine), "-1");
+    TEST_STR(en_chaine(-1000, chaine), "-1000");
+    TEST_STR(en_chaine(INT32_MAX, chaine), "2147483647");
+    TEST_STR(en_chaine(INT32_MIN, chaine), "-2147483648");
 
     return resultat;
 }
