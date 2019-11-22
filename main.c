@@ -5,17 +5,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define TEST(x) if(!x)              \
-                {                   \
-                    resultat += 1;  \
-                }
-
-#define TEST_STR(a, b) if(strcmp(a, b) != 0)    \
-                       {                        \
-                           resultat += 1;       \
-                       }
-
-
 bool palindrome(const char* const chaine)
 {
     size_t debut = 0;
@@ -101,6 +90,16 @@ int main()
     // Tous les tests incrémenterons cette variable de 1.
     // Le but est de la garder à 0.
     int resultat = 0;
+
+#define TEST(x) if(!x)              \
+                {                   \
+                    resultat += 1;  \
+                }
+
+#define TEST_STR(a, b) if(strcmp(a, b) != 0)    \
+                       {                        \
+                           resultat += 1;       \
+                       }
 
     // Tests de la fonction palindrome.
     // Tests positifs.
