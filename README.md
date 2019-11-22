@@ -57,3 +57,13 @@ Il ne vous est pas permis:
 - De modifier les déclarations des fonctions `palindrome`, `inverse`, `en_chaine` et `anagramme`. (Leurs types de retour et les types de leurs paramètres ne peuvent être modifiés.)
 - De modifier la définition de la fonction `main`.
 
+## Instructions de travail
+
+1. Au fur et à mesure de vos modifications au code, intégrez-les au dépôt local avec une description des modifications apportées.
+    - `> git add main.c`
+    - `> git commit -m "Description des modifications apportées"`
+1. Périodiquement, publiez votre branche de votre dépôt local à votre dépôt sur github.com.
+    - `> git push`
+
+Seul le code sur github.com compte.
+
