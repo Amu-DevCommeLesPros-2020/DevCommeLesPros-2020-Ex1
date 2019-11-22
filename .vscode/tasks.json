@@ -6,7 +6,7 @@
         {
             "label": "compilation",
             "type": "shell",
-            "command": "gcc -g main.c",
+            "command": "gcc -g main.c -lm",
             "group": {
                 "kind": "build",
                 "isDefault": true
