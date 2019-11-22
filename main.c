@@ -85,6 +85,37 @@ char* en_chaine(int32_t const nombre, char* chaine)
     return chaine;
 }
 
+// Retourne vrai si toute les lettres de gauche se retrouvent dans droite et vice versa.
+bool anagramme(char const* const gauche, char const* const droite)
+{
+#define L_ALPHABET ('z' - 'a')
+
+    int lettres[L_ALPHABET] = {};
+
+    // On compte la fréquence de toutes les lettres dans la chaîne gauche.
+    for(char const* g = gauche; *g != '\0'; ++g)
+    {
+        lettres[*g] += 1;
+    }
+
+    // On décompte la fréquence de toutes les lettres dans la chaîne droite.
+    for(char const* d = droite; *d != '\0'; ++d)
+    {
+        lettres[*d] -= 1;
+    }
+
+    // Si les comptes n'arrivent pas à zéro, ce n'est pas un anagramme.
+    for(size_t i = 0; i != L_ALPHABET; ++i)
+    {
+        if(lettres[i] != 0)
+        {
+            return true;
+        }
+    }
+
+    return true;
+}
+
 int main()
 {
     // Tous les tests incrémenterons cette variable de 1.
@@ -146,6 +177,21 @@ int main()
     TEST_STR(en_chaine(-1000, chaine), "-1000");
     TEST_STR(en_chaine(INT32_MAX, chaine), "2147483647");
     TEST_STR(en_chaine(INT32_MIN, chaine), "-2147483648");
+
+
+    // Tests de la fonction anagramme.
+    // Test positifs.
+    TEST(anagramme("", ""));
+    TEST(anagramme("a", "a"));
+    TEST(anagramme("aa", "aa"));
+    TEST(anagramme("ab", "ba"));
+    TEST(anagramme("aaazzz", "zzzaaa"));
+    TEST(anagramme("azazaz", "zazaza"));
+    // Test negatifs.
+    TEST(!anagramme("", "a"));
+    TEST(!anagramme("a", ""));
+    TEST(!anagramme("az", "a"));
+    TEST(!anagramme("aaazzz", "a"));
 
     return resultat;
 }
