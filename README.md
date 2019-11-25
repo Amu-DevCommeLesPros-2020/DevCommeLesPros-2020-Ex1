@@ -33,6 +33,17 @@ Modèle de départ pour exercices d'introduction à Visual Studio Code, au débo
     - Choisissez la cible correspondant à votre system opérateur.
         - Menu déroulant `DEBUG`: {`test (Linux)`, `test (MacOS)`}
     - Menu: `Debug` > `Start debugging`
+    - Vous devriez voir dans l'onglet `DEBUG CONSOLE` le résultat suivant:
+        - `Launching: [chemin d'acces]/a.out Process exited with code 23.`
+
+Vous pouvez voir la valeur retournée par le programme dans l'onglet `DEBUG CONSOLE` comme décrit ci-haut.
+Vous pouvez aussi voir la valeur retournée par le dernier programme lancé à l'invite de commandes avec `echo $?`.
+Dans l'example suivant, le programme `a.out` a retourné la valeur `23`.
+```
+> ./a.out
+> echo $?
+23
+```
 
 ## Objectif
 
@@ -40,15 +51,7 @@ Le programme contient quatre fonctions qui contiennent des erreurs.
 Ces fonctions sont testées par un macro qui compare le résultat reçu avec le résultat attendu.
 Si les résultats ne correspondent pas, un compteur de résultat final est incrementé de un.
 À la fin du programme, ce compteur final est retourné au system opérateur.
-L'objectif est de réparer toutes les fonctions et que le programme retourne zéro.
-Pour connaître le code retourné par un programme, utilisez `echo $?` à l'invite de commande.
-Dans l'example, le programme `a.out` a retourné la valeur `23`.
-Si toutes les fonctions sont correctement réparées, on verra `0`.
-```
-> ./a.out
-> echo $?
-23
-```
+L'objectif est de réparer toutes les fonctions et que le programme retourne `0`.
 
 Il vous est permis: 
 - De modifier les définitions des fonctions `palindrome`, `inverse`, `en_chaine` et `anagramme` à votre gré.
