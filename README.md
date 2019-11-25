@@ -67,3 +67,16 @@ Il ne vous est pas permis:
 
 Seul le code sur github.com compte.
 
+## "J'ai un problème !"
+
+Il est parfaitement acceptable de demander de l'aide sur Internet.
+Par contre, sur Internet, les questions d'étudiant se reniflent de loin alors soyez honnête dans la formulation de votre question et demandez bien *de l'aide*, ne demandez pas *la réponse*.
+
+#### Comment demander de l'aide
+1. https://stackoverflow.com/help/how-to-ask
+1. https://en.wikipedia.org/wiki/Wikipedia:Reference_desk/How_to_ask_a_software_question
+1. http://www.catb.org/%7Eesr/faqs/smart-questions.html
+
+#### Où demander de l'aide
+1. stackoverflow.com
+1. reddit.com/r/codinghelp
