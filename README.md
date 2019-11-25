@@ -17,14 +17,14 @@ Modèle de départ pour exercices d'introduction à Visual Studio Code, au débo
     - Suivez ces instructions: https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository
     - Attention à ne pas cloner https://github.com/thierryseegers/ProgImpAv-2020-Ex1 mais bien votre dépôt nouvellement créé.
 1. Lancez Visual Studio Code.
-    - À l'invite de commande:
+    - À l'invite de commandes:
         - `> cd [nom de votre dépôt]`
         - `> code .`
 1. Installez l'extension `C/C++` pour Visual Studio Code.
     - Suivez ces instructions: https://code.visualstudio.com/docs/languages/cpp#_install-the-microsoft-cc-extension.
 1. Pour travailler sous MacOS, installez aussi Xcode et l'extension `CodeLLDB` pour Visual Studio Code.
     - Installez Xcode via le App Store.
-    - Installez "Xcode Command Line Tools". À l'invite de commande: `> xcode-select --install`
+    - Installez "Xcode Command Line Tools". À l'invite de commandes: `> xcode-select --install`
     - https://marketplace.visualstudio.com/items?itemName=vadimcn.vscode-lldb
 1. Compilez une première fois le programme.
     - Menu: `View` > `Command Palette` > `Tasks: Run Build Task`
