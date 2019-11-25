@@ -51,7 +51,7 @@ char* inverse(char* chaine)
 // Retourne un pointeur au début de la chaîne donnée.
 char* en_chaine(int32_t const nombre, char* chaine)
 {
-    memset(chaine, '\0', (size_t)log10(INT32_MAX) + 2);
+    memset(chaine, '\0', (size_t)ceil(log10(INT32_MAX)) + 2);
 
     if(nombre < 0)
     {
@@ -169,7 +169,7 @@ int main()
 
 
     // Tests de la fonction en_chaine.
-    char chaine[(size_t)log10(INT32_MAX) + 2]; // Suffisament d'espace pour tous les chiffres, le signe de négation s'il y a lieu et le '\0' final.
+    char chaine[(size_t)ceil(log10(INT32_MAX)) + 2]; // Suffisament d'espace pour tous les chiffres, le signe de négation s'il y a lieu et le '\0' final.
     TEST_STR(en_chaine(0, chaine), "0");
     TEST_STR(en_chaine(1, chaine), "1");
     TEST_STR(en_chaine(11, chaine), "11");
