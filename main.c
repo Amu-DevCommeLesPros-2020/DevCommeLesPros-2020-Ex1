@@ -119,7 +119,7 @@ bool anagramme(char const* const gauche, char const* const droite)
 
 int main()
 {
-    // Tous les tests incrémenterons cette variable de 1.
+    // Pour chaque test qui échoue, cette variable sera incrémentée de 1.
     // Le but est de la garder à 0.
     int resultat = 0;
 
