@@ -10,11 +10,11 @@ bool palindrome(const char* const chaine)
 {
     size_t debut = 0;
     size_t fin = strlen(chaine);
-    
+
     while(debut != fin)
     {
         char const gauche = chaine[debut];
-        char const droite = chaine[fin];    
+        char const droite = chaine[fin];
         if(gauche != droite)
         {
             return false;
@@ -23,7 +23,7 @@ bool palindrome(const char* const chaine)
         ++debut;
         --fin;
     }
-    
+
     return true;
 }
 
@@ -51,7 +51,7 @@ char* inverse(char* chaine)
 // Retourne un pointeur au début de la chaîne donnée.
 char* en_chaine(int32_t const nombre, char* chaine)
 {
-    memset(chaine, '\0', (size_t)log10(INT32_MAX) + 2);
+    memset(chaine, '\0', (size_t)ceil(log10(INT32_MAX)) + 2);
 
     if(nombre < 0)
     {
@@ -119,7 +119,7 @@ bool anagramme(char const* const gauche, char const* const droite)
 
 int main()
 {
-    // Tous les tests incrémenterons cette variable de 1.
+    // Pour chaque test qui échoue, cette variable sera incrémentée de 1.
     // Le but est de la garder à 0.
     int resultat = 0;
 
@@ -169,7 +169,7 @@ int main()
 
 
     // Tests de la fonction en_chaine.
-    char chaine[(size_t)log10(INT32_MAX) + 2]; // Suffisament d'espace pour tous les chiffres, le signe de négation s'il y a lieu et le '\0' final.
+    char chaine[(size_t)ceil(log10(INT32_MAX)) + 2]; // Suffisament d'espace pour tous les chiffres, le signe de négation s'il y a lieu et le '\0' final.
     TEST_STR(en_chaine(0, chaine), "0");
     TEST_STR(en_chaine(1, chaine), "1");
     TEST_STR(en_chaine(11, chaine), "11");
