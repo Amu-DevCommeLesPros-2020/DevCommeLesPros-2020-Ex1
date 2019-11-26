@@ -6,12 +6,17 @@
         {
             "label": "compilation",
             "type": "shell",
-            "command": "gcc -g main.c -lm",
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
-            "problemMatcher": "$gcc"
+            "problemMatcher": "$gcc",
+            "osx":{
+                "command": "clang --debug main.c"
+            },
+            "linux": {
+                "command": "gcc --debug main.c -lm"
+            }
         }
     ]
 }
