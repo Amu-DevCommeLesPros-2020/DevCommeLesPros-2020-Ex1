@@ -25,7 +25,7 @@ Modèle de départ pour exercices d'introduction à Visual Studio Code, au débo
 1. Pour travailler sous MacOS, installez aussi Xcode et l'extension `CodeLLDB` pour Visual Studio Code.
     - Installez Xcode via le App Store.
     - Installez "Xcode Command Line Tools". À l'invite de commandes: `> xcode-select --install`
-    - https://marketplace.visualstudio.com/items?itemName=vadimcn.vscode-lldb
+    - https://marketplace.visualstudio.com/items?itemName=vadimcn.vscode-lldb <!-- Mesure temporaire tant que https://github.com/microsoft/vscode-cpptools/issues/3829 n'est pas résolu. -->
 1. Compilez une première fois le programme.
     - Menu: `View` > `Command Palette` > `Tasks: Run Build Task`
 1. Executez une première fois le programme avec le débogueur.
@@ -33,8 +33,13 @@ Modèle de départ pour exercices d'introduction à Visual Studio Code, au débo
     - Choisissez la cible correspondant à votre system opérateur.
         - Menu déroulant `DEBUG`: {`test (Linux)`, `test (MacOS)`}
     - Menu: `Debug` > `Start debugging`
-    - Vous devriez voir dans l'onglet `DEBUG CONSOLE` le résultat suivant:
-        - `Launching: [chemin d'acces]/a.out Process exited with code 23.`
+1. Vous devriez observer dans l'onglet `DEBUG CONSOLE` le résultat suivant:
+    - Sous Linux: 
+        - `[Inferior 1 (process [NNNN]) exited with code 027]`.
+        - Attention, le débogueur `gdb` affiche le code de retour en octal (base 8). Ici, `027` en octal est `23` en décimal.
+    - Sous MacOS: 
+        - `Launching: [chemin d'acces]/a.out`
+        - `Process exited with code 23.`
 
 Vous pouvez voir la valeur retournée par le programme dans l'onglet `DEBUG CONSOLE` comme décrit ci-haut.
 Vous pouvez aussi voir la valeur retournée par le dernier programme lancé à l'invite de commandes avec `echo $?`.
@@ -83,3 +88,4 @@ Par contre, sur Internet, les questions d'étudiant se reniflent de loin alors s
 #### Où demander de l'aide
 1. stackoverflow.com
 1. reddit.com/r/codinghelp
+
