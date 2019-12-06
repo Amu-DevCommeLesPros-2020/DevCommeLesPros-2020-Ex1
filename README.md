@@ -64,6 +64,7 @@ Il vous est permis:
 Il ne vous est pas permis:
 - De modifier les déclarations des fonctions `palindrome`, `inverse`, `en_chaine` et `anagramme`. (Leurs types de retour et les types de leurs paramètres ne peuvent être modifiés.)
 - De modifier la définition de la fonction `main`.
+- De modifier la définition de la fonction `main`. Assurez-vous d'aucunement modifier le code qui vient après `int main()` car le script de correction en dépend.
 
 ## Instructions de travail
 
@@ -89,3 +90,10 @@ Par contre, sur Internet, les questions d'étudiant se reniflent de loin alors s
 1. stackoverflow.com
 1. reddit.com/r/codinghelp
 
+## Correction
+
+Dans le répertoire `correction`, vous trouverez le script que le professeur utilisera pour automatiser une première partie du processus de correction.
+Pour une liste de dépôts donnée dans `correction/depots.txt`, le script clone et compile et le dépôt, lance le programme et affiche le résultat.
+Vous pouvez tester votre propre dépôt en l'ajoutant à ce fichier et en lancant le script à l'invite de commandes avec `python3 correction.py`.
+
+La deuxième partie de la correction est une inspection visuelle de votre code.
