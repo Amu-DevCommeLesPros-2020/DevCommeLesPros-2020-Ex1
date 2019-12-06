@@ -1,6 +1,6 @@
 #include <inttypes.h>
-#include <math.h>
 #include <limits.h>
+#include <math.h>
 #include <stdbool.h>
 #include <stdint.h>
 #include <stdlib.h>
@@ -91,7 +91,7 @@ bool anagramme(char const* const gauche, char const* const droite)
 {
 #define L_ALPHABET ('z' - 'a')
 
-    int lettres[L_ALPHABET] = {};
+    int lettres[L_ALPHABET] = {0};
 
     // On compte la fréquence de toutes les lettres dans la chaîne gauche.
     for(char const* g = gauche; *g != '\0'; ++g)
