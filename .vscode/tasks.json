@@ -11,6 +11,10 @@
                 "isDefault": true
             },
             "problemMatcher": "$gcc",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
             "osx":{
                 "command": "clang --debug main.c"
             },
