@@ -103,7 +103,7 @@ Par contre, sur Internet, les questions d'étudiant se reniflent de loin alors s
 ## Correction
 
 Dans le répertoire `correction`, vous trouverez le script que le professeur utilisera pour automatiser une première partie du processus de correction.
-Pour une liste de dépôts donnée dans `correction/depots.txt`, le script clone et compile et le dépôt, lance le programme et affiche le résultat.
-Vous pouvez tester votre propre dépôt en l'ajoutant à ce fichier et en lancant le script à l'invite de commandes avec `python3 correction.py`.
+Pour une liste de dépôts donnée dans `correction/depots.txt`, le script clone et compile le dépôt, lance le programme et affiche le résultat.
+Vous pouvez tester votre propre dépôt en l'ajoutant à ce fichier et en lancant le script à l'invite de commandes avec `> python3 correction.py`.
 
 La deuxième partie de la correction est une inspection visuelle de votre code.
