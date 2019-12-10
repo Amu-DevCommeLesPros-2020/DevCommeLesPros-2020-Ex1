@@ -62,4 +62,4 @@ with open('depots.txt') as remote_depot_names:
         except pygit2.GitError:
             print('-1')
         except RuntimeError as error:
-            print(error.args)
+            print(error.args[0])
