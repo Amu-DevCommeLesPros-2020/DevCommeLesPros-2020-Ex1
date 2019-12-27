@@ -1,4 +1,4 @@
-# ProgImpAv-2020-Ex1
+# DevCommeLesPros-2020-Ex1
 Modèle de départ pour exercices d'introduction à Visual Studio Code, au débogueur, à la gestion de versions et github.com.
 
 ## Instructions de départ
@@ -7,7 +7,7 @@ Modèle de départ pour exercices d'introduction à Visual Studio Code, au débo
 1. Créez une clé SSH et ajoutez-la au [ssh-agent](https://fr.wikipedia.org/wiki/Ssh-agent).
     - Suivez ces instructions: https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent.
     - Et celles-ci: https://help.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account.
-1. Créez votre dépôt sur http://github.com en utilisant ce dépôt-ci (https://github.com/thierryseegers/ProgImpAv-2020-Ex1) comme modèle.
+1. Créez votre dépôt sur http://github.com en utilisant ce dépôt-ci (https://github.com/thierryseegers/DevCommeLesPros-2020-Ex1) comme modèle.
     - Suivez ces instructions: https://help.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template.
     - Choisissez l'option `Private` à l'étape 5.
 1. Ajoutez le professeur comme collaborateur à votre dépôt.
@@ -15,7 +15,7 @@ Modèle de départ pour exercices d'introduction à Visual Studio Code, au débo
         - Nom d'utilisateur à ajouter: `thierryseegers`.
 1. Clonez votre dépôt vers votre espace de travail local.
     - Suivez ces instructions: https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository
-    - Attention à ne pas cloner https://github.com/thierryseegers/ProgImpAv-2020-Ex1 mais bien votre dépôt nouvellement créé.
+    - Attention à ne pas cloner https://github.com/thierryseegers/DevCommeLesPros-2020-Ex1 mais bien votre dépôt nouvellement créé.
 1. Lancez Visual Studio Code.
     - À l'invite de commandes:
         - `> cd [nom de votre dépôt]`
