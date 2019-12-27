@@ -13,7 +13,6 @@ Modèle de départ pour exercices d'introduction à Visual Studio Code, au débo
 1. Ajoutez le professeur comme collaborateur à votre dépôt.
     - Suivez ces instructions: https://help.github.com/en/github/setting-up-and-managing-your-github-user-account/inviting-collaborators-to-a-personal-repository
         - Nom d'utilisateur à ajouter: `thierryseegers`.
-        - Niveau de permission à donner: `Read`.
 1. Clonez votre dépôt vers votre espace de travail local.
     - Suivez ces instructions: https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository
     - Attention à ne pas cloner https://github.com/thierryseegers/ProgImpAv-2020-Ex1 mais bien votre dépôt nouvellement créé.
@@ -72,6 +71,7 @@ Il ne vous est pas permis:
     - `> git commit -m "Description des modifications apportées"`
 1. Périodiquement, publiez votre dépôt local à votre dépôt sur github.com.
     - `> git push`
+1. Répétez ces étapes jusqu'à ce que tout les tests passent.
 
 Avec la commande `> git log --all --decorate --oneline --graph`, l'historique de votre travail devrait au fil du temps ressembler à ceci  (lire du bas vers le haut):
 
@@ -81,8 +81,6 @@ Avec la commande `> git log --all --decorate --oneline --graph`, l'historique de
 * 26354bc Passe les tests de inverse.
 * 53b3e8d Passe les tests de palindrome.
 ```
-
-Seul le code de votre dépôt sur http://github.com compte.
 
 ## "J'ai un problème !"
 
@@ -103,7 +101,14 @@ Par contre, sur Internet, les questions d'étudiant se reniflent de loin alors s
 ## Correction
 
 Dans le répertoire `correction`, vous trouverez le script que le professeur utilisera pour automatiser une première partie du processus de correction.
-Pour une liste de dépôts donnée dans `correction/depots.txt`, le script clone et compile et le dépôt, lance le programme et affiche le résultat.
-Vous pouvez tester votre propre dépôt en l'ajoutant à ce fichier et en lancant le script à l'invite de commandes avec `python3 correction.py`.
+Pour une liste de dépôts donnée dans `correction/depots.txt`, le script clone et compile le dépôt, lance le programme et affiche le résultat.
+Vous pouvez tester votre propre dépôt comme le fera le professeur:
+1. Installez le module pygit2 avec `> pip3 install pygit2` à l'invite de commandes.
+1. Ajoutez le nom de votre dépôt (à la liste `correction/depots.txt`.
+1. Lancez le script à l'invite de commandes:
+    - `> cd correction`
+    - `> python3 correction.py`
 
 La deuxième partie de la correction est une inspection visuelle de votre code.
+
+Seul le code de votre dépôt sur http://github.com compte !
