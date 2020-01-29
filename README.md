@@ -94,6 +94,7 @@ Par contre, sur Internet, les questions d'étudiant se reniflent de loin alors s
 1. http://www.catb.org/%7Eesr/faqs/smart-questions.html
 
 #### Où demander de l'aide
+1. https://devcommelespros.slack.com ([invitation](https://join.slack.com/t/devcommelespros/shared_invite/enQtODg1MjI3NTYwODE4LWI2NTE1YTQ2ODg2MmMyYTliYTJkNDcwYTVhOWQ5N2Y0NDkyZGZhZjAwM2Q2NDRjY2Y2NjI3OTU1YjAzZDcwY2I))
 1. https://stackoverflow.com
 1. https://reddit.com/r/C_Programming/
 1. https://reddit.com/r/codinghelp
