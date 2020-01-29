@@ -99,7 +99,7 @@ Par contre, sur Internet, les questions d'étudiant se reniflent de loin alors s
 1. https://reddit.com/r/C_Programming/
 1. https://reddit.com/r/codinghelp
 
-## Correction
+## Évaluation
 
 Dans le répertoire `correction`, vous trouverez le script que le professeur utilisera pour automatiser une première partie du processus de correction.
 Pour une liste de dépôts donnée dans `correction/depots.txt`, le script clone et compile le dépôt, lance le programme et affiche le résultat.
