@@ -94,17 +94,18 @@ Par contre, sur Internet, les questions d'étudiant se reniflent de loin alors s
 1. http://www.catb.org/%7Eesr/faqs/smart-questions.html
 
 #### Où demander de l'aide
+1. https://devcommelespros.slack.com ([invitation](https://join.slack.com/t/devcommelespros/shared_invite/enQtODg1MjI3NTYwODE4LWI2NTE1YTQ2ODg2MmMyYTliYTJkNDcwYTVhOWQ5N2Y0NDkyZGZhZjAwM2Q2NDRjY2Y2NjI3OTU1YjAzZDcwY2I))
 1. https://stackoverflow.com
 1. https://reddit.com/r/C_Programming/
 1. https://reddit.com/r/codinghelp
 
-## Correction
+## Évaluation
 
 Dans le répertoire `correction`, vous trouverez le script que le professeur utilisera pour automatiser une première partie du processus de correction.
 Pour une liste de dépôts donnée dans `correction/depots.txt`, le script clone et compile le dépôt, lance le programme et affiche le résultat.
 Vous pouvez tester votre propre dépôt comme le fera le professeur:
 1. Installez le module pygit2 avec `> pip3 install pygit2` à l'invite de commandes.
-1. Ajoutez le nom de votre dépôt (à la liste `correction/depots.txt`.
+1. Ajoutez le nom de votre dépôt à la liste `correction/depots.txt`.
 1. Lancez le script à l'invite de commandes:
     - `> cd correction`
     - `> python3 correction.py`
