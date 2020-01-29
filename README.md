@@ -105,7 +105,7 @@ Dans le répertoire `correction`, vous trouverez le script que le professeur uti
 Pour une liste de dépôts donnée dans `correction/depots.txt`, le script clone et compile le dépôt, lance le programme et affiche le résultat.
 Vous pouvez tester votre propre dépôt comme le fera le professeur:
 1. Installez le module pygit2 avec `> pip3 install pygit2` à l'invite de commandes.
-1. Ajoutez le nom de votre dépôt (à la liste `correction/depots.txt`.
+1. Ajoutez le nom de votre dépôt à la liste `correction/depots.txt`.
 1. Lancez le script à l'invite de commandes:
     - `> cd correction`
     - `> python3 correction.py`
