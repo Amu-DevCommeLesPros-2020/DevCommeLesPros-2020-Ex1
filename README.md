@@ -16,6 +16,8 @@ Modèle de départ pour exercices d'introduction à Visual Studio Code, au débo
 1. Clonez votre dépôt vers votre espace de travail local.
     - Suivez ces instructions: https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository
     - Attention à ne pas cloner https://github.com/thierryseegers/DevCommeLesPros-2020-Ex1 mais bien votre dépôt nouvellement créé.
+1. Pour travailler sous Windows, installez Windows Subsystem for Linux (WSL). Ceci vous permettra de travaillez avec les outils qu'on retrouve us Linux (`gcc`, `gdb`, etc.).
+    - Suivez ces instructions: https://code.visualstudio.com/docs/cpp/config-wsl jusqu'au chapitre «Run VS Code in WSL» inclusivement.
 1. Lancez Visual Studio Code.
     - À l'invite de commandes:
         - `> cd [nom de votre dépôt]`
@@ -31,7 +33,7 @@ Modèle de départ pour exercices d'introduction à Visual Studio Code, au débo
 1. Executez une première fois le programme avec le débogueur.
     - Menu: `View` > `Debug`
     - Choisissez la cible correspondant à votre système d'exploitation.
-        - Menu déroulant `DEBUG`: {`test (Linux)`, `test (MacOS)`}
+        - Menu déroulant `DEBUG`: {`test (Linux/WSL)`, `test (MacOS)`}.
     - Menu: `Debug` > `Start debugging`
 1. Vous devriez observer dans l'onglet `DEBUG CONSOLE` le résultat suivant:
     - Sous Linux: 
