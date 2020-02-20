@@ -10,11 +10,27 @@ For each depot name found in depots.txt:
     - -3: failed to compile.
 """
 
+import argparse
+import datetime
 import hashlib
 import itertools
 import os
+import sys
 
 import pygit2
+
+ARGPARSER = argparse.ArgumentParser()
+ARGPARSER.add_argument('-t', '--timestamp', dest='timestamp', action='store', metavar='TIMESTAMP(YYYY-MM-DD HH24:MM)',
+                       help='Date and time at which to clone the repositories.')
+ARGS = ARGPARSER.parse_args()
+
+# Verify timestamp format, if present.
+if ARGS.timestamp:
+    try:
+        datetime.datetime.strptime(ARGS.timestamp, "%Y-%m-%d %H:%M")
+    except ValueError:
+        print('Bad timestamp', sys.exc_info())
+        sys.exit(100)
 
 def hash_test_code(main_path):
     """Hashes all lines in file main_path starting from 'int main()\n' until the end.
