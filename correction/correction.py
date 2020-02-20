@@ -63,6 +63,10 @@ with open('depots.txt') as remote_depot_names:
                     is None:
                 raise RuntimeError('-1')
 
+            # If timestamp is specified, checkout at that point in time.
+            if ARGS.timestamp:
+                os.system('cd ' + local_depot_path + ' && git checkout --quiet `git rev-list -n 1 --before="' + ARGS.timestamp + '" master`')
+
             # Confirm test code is intact.
             student_test_code_hexdigest = hash_test_code(local_depot_path + '/main.c')
             if student_test_code_hexdigest != PROFESSOR_TEST_CODE_HEXDIGEST:
