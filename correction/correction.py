@@ -1,12 +1,13 @@
 """Correction script for this exercise.
 For each depot name found in depots.txt:
 - clones the repo.
+- prints the name of the repo.
 - confirms test code from main.c is the same as the original.
+- prints a '!' if a mismatch detected between original test code and test code in main.c.
 - compiles main.c to a.out.
 - runs a.out.
 - prints the return code of a.out or a negative value if an earlier error occured:
     - -1: failed to clone the repo.
-    - -2: mismatch detected between original test code and test code in main.c.
     - -3: failed to compile.
 """
 
