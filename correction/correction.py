@@ -22,6 +22,8 @@ import pygit2
 ARGPARSER = argparse.ArgumentParser()
 ARGPARSER.add_argument('-t', '--timestamp', dest='timestamp', action='store', metavar='TIMESTAMP(YYYY-MM-DD HH24:MM)',
                        help='Date and time at which to clone the repositories.')
+ARGPARSER.add_argument('-l', '--show-log', dest='showlog', action='store_true',
+                       help='Print git log of repositories.')
 ARGS = ARGPARSER.parse_args()
 
 # Verify timestamp format, if present.
@@ -79,6 +81,10 @@ with open('depots.txt') as remote_depot_names:
 
             # Run and print result.
             print(str(os.WEXITSTATUS(os.system(local_depot_path + '/a.out'))))
+
+            # If show-log is specified, show log.
+            if ARGS.showlog:
+                os.system('cd ' + local_depot_path + ' && git log --oneline --graph --decorate')
         except pygit2.GitError:
             print('-1')
         except RuntimeError as error:
