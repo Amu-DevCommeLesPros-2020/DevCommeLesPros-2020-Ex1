@@ -72,7 +72,7 @@ with open('depots.txt') as remote_depot_names:
             # Confirm test code is intact.
             student_test_code_hexdigest = hash_test_code(local_depot_path + '/main.c')
             if student_test_code_hexdigest != PROFESSOR_TEST_CODE_HEXDIGEST:
-                raise RuntimeError('-2')
+                print(' !', end='')
 
             # Compile.
             if os.system('gcc ' + local_depot_path + '/main.c -lm -o ' + local_depot_path
