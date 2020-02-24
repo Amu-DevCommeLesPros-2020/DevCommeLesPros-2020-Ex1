@@ -1,12 +1,13 @@
 """Correction script for this exercise.
 For each depot name found in depots.txt:
 - clones the repo.
+- prints the name of the repo.
 - confirms test code from main.c is the same as the original.
+- prints a '!' if a mismatch detected between original test code and test code in main.c.
 - compiles main.c to a.out.
 - runs a.out.
 - prints the return code of a.out or a negative value if an earlier error occured:
     - -1: failed to clone the repo.
-    - -2: mismatch detected between original test code and test code in main.c.
     - -3: failed to compile.
 """
 
@@ -67,12 +68,13 @@ with open('depots.txt') as remote_depot_names:
 
             # If timestamp is specified, checkout at that point in time.
             if ARGS.timestamp:
-                os.system('cd ' + local_depot_path + ' && git checkout --quiet `git rev-list -n 1 --before="' + ARGS.timestamp + '" master`')
+                os.system('cd ' + local_depot_path + ' && ' +
+                          'git checkout --quiet `git rev-list -n 1 --before="' + ARGS.timestamp + '" master`')
 
             # Confirm test code is intact.
             student_test_code_hexdigest = hash_test_code(local_depot_path + '/main.c')
             if student_test_code_hexdigest != PROFESSOR_TEST_CODE_HEXDIGEST:
-                raise RuntimeError('-2')
+                print(' !', end='')
 
             # Compile.
             if os.system('gcc ' + local_depot_path + '/main.c -lm -o ' + local_depot_path
